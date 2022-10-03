@@ -2,17 +2,14 @@ const pNode = document.getElementById("tituloAutor")
 
 var autor = {
     nombre: "Nombre: Manuel Pablo",
-    edad: "Edad : 21",
     correo: "Email:  pabloramosaguilar11@hotmail.com"
 };
 
 const fechaescribir = document.getElementById("fecha");
 pNode.innerText += "¡Saludos!";
 const nombre1 = document.getElementById("nombre");
-const edad1 = document.getElementById("edad");
 const correo1 = document.getElementById("correo");
 nombre1.innerText += autor.nombre;
-edad1.innerText += autor.edad;
 correo1.innerText += autor.correo;
 
 let links = document.querySelectorAll("#fotoA");
@@ -25,7 +22,7 @@ links.forEach(function (link) {
 /* Otra forma sería usar:
 var img = document.createElement("img");
 img.src = "autorOsuna.jpg";
-var src = document.getElementById("fotoAlcalde");
+var src = document.getElementById("fotoA");
 src.appendChild(img);*/
 
 let fecha = new Date();
@@ -43,9 +40,10 @@ function calcularIMC() {
 
     alert("¿Quieres saber tu masa corporal?");
 
-    peso = prompt("¿cual es tu peso?");
+    peso = prompt("¿Cual es tu peso? formato: Peso = kg (ej: 80)");
     peso = parseInt(peso);
-    estatura = prompt("¿cual es tu estatura?");
+    estatura = prompt("¿Cual es tu estatura? altura = M (ej: 1.60) usa . como coma y no ,");
+
     var mult = (estatura * estatura);
     imc = peso / mult;
 
@@ -57,22 +55,22 @@ function calcularIMC() {
     if (valor < 16.00) {
         texto.innerText = "Peso bajo necesitas Valorar signos de desnutricion";
     }
-    else if (valor <= 16.00 || valor <= 16.99) {
+    else if (valor < 17) {
         texto.innerText = "Delgadez Moderada";
     }
-    else if (valor <= 17.00 || valor < 18.49) {
+    else if (valor < 18.50) {
         texto.innerText = "Delgadez Aceptable";
     }
-    else if (valor <= 18.50 || valor <= 24.99) {
+    else if (valor < 25) {
         texto.innerText = "Peso Normal";
     }
-    else if (valor <= 25.00 || valor <= 29.99) {
-        texto.innerText = "Tienes OBESIDAD GRADA I. Riesgo alto para desarrollar enfermedades cardiovasculares";
+    else if (valor < 30) {
+        texto.innerText = "Tienes OBESIDAD GRADO I. Riesgo alto para desarrollar enfermedades cardiovasculares";
     }
-    else if (valor <= 30.00 || valor <= 34.99) {
-        texto.innerText = "Tienes OBESIDAD GRADA II. Riesgo alto para desarrollar enfermedades cardiovasculares";
+    else if (valor < 35) {
+        texto.innerText = "Tienes OBESIDAD GRADO II. Riesgo alto para desarrollar enfermedades cardiovasculares";
     }
-    else if (valor <= 35.00 || valor <= 40.00) {
+    else if (valor <= 40.00) {
         texto.innerText = "Tienes OBESIDAD GRADO III. Riesgo muy alto para desarrollar enfermedades cardiovasculares";
     }
     else {
