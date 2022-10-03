@@ -40,14 +40,14 @@ function calcularIMC() {
 
     alert("¿Quieres saber tu masa corporal?");
 
-    peso = prompt("¿Cual es tu peso? formato: Peso = kg (ej: 80)");
+    peso = prompt("¿Cuál es tu peso? formato: Peso = kg (ej: 80)");
     peso = parseInt(peso);
-    estatura = prompt("¿Cual es tu estatura? altura = M (ej: 1.60) usa . como coma y no ,");
+    estatura = prompt("¿Cuál es tu estatura? altura = M (ej: 1.60) usa . como coma y no ,");
 
     var mult = (estatura * estatura);
     imc = peso / mult;
 
-    alert("Tu indice de masa corporal es:" + imc);
+    alert("Tu índice de masa corporal es:" + imc);
 
     var valor
     valor = imc;
@@ -74,7 +74,7 @@ function calcularIMC() {
         texto.innerText = "Tienes OBESIDAD GRADO III. Riesgo muy alto para desarrollar enfermedades cardiovasculares";
     }
     else {
-        texto.innerText = "No existe clasificacion";
+        texto.innerText = "No existe clasificación";
     }
 
     articulo.style.visibility = "visible";
